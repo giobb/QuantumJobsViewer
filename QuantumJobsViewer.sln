@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31320.298
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumJob.Functions", "QuantumJob.Functions\QuantumJob.Functions.csproj", "{E0A77B28-280A-43D3-AAD8-7B16B9FF96F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F8A91FAD-2B49-4DED-90EE-154AF9AE8BF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumJobsViewer.Model", "QuantumJobsViewer.Model\QuantumJobsViewer.Model.csproj", "{8EED6823-CD2A-4B77-B42B-56E581391EF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumJobsViewer.Abstraction", "QuantumJobsViewer.Abstraction\QuantumJobsViewer.Abstraction.csproj", "{68953ED5-B1AE-44B7-ADBE-C509B74BED9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumJobsViewer.Service", "QuantumJobsViewer.Service\QuantumJobsViewer.Service.csproj", "{EDFE56B4-DCAD-45EE-9D23-5BDF310BB75E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0A77B28-280A-43D3-AAD8-7B16B9FF96F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A77B28-280A-43D3-AAD8-7B16B9FF96F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A77B28-280A-43D3-AAD8-7B16B9FF96F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A77B28-280A-43D3-AAD8-7B16B9FF96F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EED6823-CD2A-4B77-B42B-56E581391EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EED6823-CD2A-4B77-B42B-56E581391EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EED6823-CD2A-4B77-B42B-56E581391EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EED6823-CD2A-4B77-B42B-56E581391EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68953ED5-B1AE-44B7-ADBE-C509B74BED9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68953ED5-B1AE-44B7-ADBE-C509B74BED9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68953ED5-B1AE-44B7-ADBE-C509B74BED9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68953ED5-B1AE-44B7-ADBE-C509B74BED9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFE56B4-DCAD-45EE-9D23-5BDF310BB75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFE56B4-DCAD-45EE-9D23-5BDF310BB75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFE56B4-DCAD-45EE-9D23-5BDF310BB75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFE56B4-DCAD-45EE-9D23-5BDF310BB75E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EED6823-CD2A-4B77-B42B-56E581391EF9} = {F8A91FAD-2B49-4DED-90EE-154AF9AE8BF1}
+		{68953ED5-B1AE-44B7-ADBE-C509B74BED9D} = {F8A91FAD-2B49-4DED-90EE-154AF9AE8BF1}
+		{EDFE56B4-DCAD-45EE-9D23-5BDF310BB75E} = {F8A91FAD-2B49-4DED-90EE-154AF9AE8BF1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A2059DE-7964-47CE-BBE9-9739755D5B52}
+	EndGlobalSection
+EndGlobal
