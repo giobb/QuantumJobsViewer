@@ -1,5 +1,5 @@
-﻿using QuantumJobsViewer.Abstraction;
-using System;
+﻿using QuantumJobsViewer.Common;
+using QuantumJobsViewer.Abstraction;
 using System.Collections.Generic;
 using System.Text;
 
