@@ -1,15 +1,18 @@
-﻿using QuantumJobsViewer.Abstraction;
-using QuantumJobsViewer.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace QuantumJobsViewer.Service
 {
+    public interface IJobsService
+    {
+        IEnumerable<string> GetResults(DateTime? from, DateTime? to);
+    }
+
     public class JobsService : IJobsService
     {
-        readonly Abstraction.IBlobService _blobService;
+        readonly IBlobService _blobService;
 
-        public IEnumerable<JobResult> GetResults(DateTime? from, DateTime? to)
+        public IEnumerable<string> GetResults(DateTime? from, DateTime? to)
         {
             throw new NotImplementedException();
         }

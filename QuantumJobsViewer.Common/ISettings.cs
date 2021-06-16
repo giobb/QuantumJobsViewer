@@ -15,9 +15,13 @@ namespace QuantumJobsViewer.Common
         readonly SecretClient _sectetClient;
         public Settings()
         {
-            _sectetClient = new SecretClient(new Uri("https://gioskv.vault.azure.net/"), new InteractiveBrowserCredential());
+            var options = new DefaultAzureCredentialOptions
+            {
+                VisualStudioTenantId = "e0f08fd5-db36-486c-abf8-b510fd977634",
+            };
+            _sectetClient = new SecretClient(new Uri("https://gioskv.vault.azure.net/"), new DefaultAzureCredential(options));
         }
 
-        public string this[string key] => _sectetClient.GetSecret("MySPSecret").Value.Value;
+        public string this[string key] => _sectetClient.GetSecret(key).Value.Value;
     }
 }
