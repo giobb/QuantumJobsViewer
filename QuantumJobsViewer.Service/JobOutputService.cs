@@ -3,26 +3,30 @@ using System.Collections.Generic;
 using System.Text;
 using Azure.Storage.Blobs;
 using System.Threading.Tasks;
+using System;
+using Azure.Storage.Blobs.Models;
+using System.Linq;
 
 namespace QuantumJobsViewer.Service
 {
-    public interface IBlobService
+    public interface IJobOutputService
     {
-        Task<IEnumerable<ContainerInfo>> GetContainerNamesAsync();
+        Task<IEnumerable<ContainerInfo>> GetOutputs();
     }
 
-    public class BlobService : IBlobService
+    public class JobOutputService : IJobOutputService
     {
         readonly BlobServiceClient _blobServiceClient;
 
-        public BlobService(ISettings settings)
+        public JobOutputService(ISettings settings)
         {
             _blobServiceClient = new BlobServiceClient(settings["quantum-storage-constr"]);
         }
 
-        public async Task<IEnumerable<ContainerInfo>> GetContainerNamesAsync()
+        public async Task<IEnumerable<ContainerInfo>> GetOutputs()
         {
             var pages =  _blobServiceClient.GetBlobContainersAsync();
+
 
             var names = new List<ContainerInfo>();
             await foreach(var container in pages)

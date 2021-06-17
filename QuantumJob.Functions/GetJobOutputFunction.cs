@@ -7,6 +7,10 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using QuantumJobsViewer.Common;
+using QuantumJobsViewer.Service;
+using System.Linq;
+using System.Web.Http;
 
 namespace QuantumJob.Functions
 {
@@ -19,17 +23,24 @@ namespace QuantumJob.Functions
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            string from = req.Query["from"];
+            try
+            {
 
-            //string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            //dynamic data = JsonConvert.DeserializeObject(requestBody);
-            //name = name ?? data?.name;
+                JobOutputService blobService = new(new Settings());
+                var jobs = await blobService.GetOutputs();
 
-            //string responseMessage = string.IsNullOrEmpty(name)
-            //    ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-            //    : $"Hello, {name}. This HTTP triggered function executed successfully.";
+                log.LogInformation($"Number of outputs retrieved: {jobs.Count()}");
+                
 
-            return new OkObjectResult(null);
+                return new OkObjectResult(jobs);
+
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex.Message);
+                return new ExceptionResult(ex, false);
+            }
+            
         }
     }
 }
