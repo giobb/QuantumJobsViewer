@@ -1,4 +1,4 @@
-name: Windows_Dotnet_Workflow
+name: 'Jobs Viewer Service CICD'
 
 on:
   [push]
