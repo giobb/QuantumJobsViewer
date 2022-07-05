@@ -18,9 +18,9 @@ namespace QuantumJobsViewer.Service
     {
         readonly BlobServiceClient _blobServiceClient;
 
-        public JobOutputService(ISettings settings)
+        public JobOutputService(string blobConStr)
         {
-            _blobServiceClient = new BlobServiceClient(settings["quantum-storage-constr"]);
+            _blobServiceClient = new BlobServiceClient(blobConStr);
         }
 
         public async Task<IEnumerable<ContainerInfo>> GetOutputs()

@@ -8,7 +8,9 @@ namespace QuantumJobsViewer.Service.Driver
     {
         static void Main(string[] args)
         {
-            var blobService = new JobOutputService(new Settings());
+            Settings settings = new();
+            var blobConStr = settings["quantum-storage-constr"]);
+            var blobService = new JobOutputService(blobConStr);
             var names = blobService.GetOutputs().Result;
             foreach (var n in names.Take(50).OrderByDescending(o=>o.LastModified))
             {
